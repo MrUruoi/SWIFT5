@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constants and Variables</title>
+</head>
+<link href="css/main.css" rel="stylesheet">
+<body>
+    <div class="container">
+        <nav>
+            <!-- <header>header...</header> -->
+            <h2>SWIFT 5</h2>
+            <h3>定数と変数</h3>
+            <br />
+            <div id="navigation_div">
+                <hr />
+                <ul>
+                    <li><a href="#type_annotations">タイプアノテーション</a></li>
+                    <li><a href="#declarations">宣言(Declarations)</a></li>
+                    <li><a href="#assignment">宣言(Declarations)</a></li>
+                    <li><a href="#assignment">代入(Assignment)</a></li>
+                    <li><a href="#initialization">初期化(Initialization)</a></li>
+                    <li><a href="#identifiers">識別子(Identifiers)</a></li>
+                    <li><a href="#keywords">キーワード(Keywords)</a></li>
+                </ul>
+                <hr />
+            </div>
+        </nav>
+        <main>
+            <article>
+                <header>
+                    <h1 id="constants_and_variables">定数と変数(Constants and Variables)</h1>
+                    <p>　プログラムは実行中にデータを一時的に保存する方法が必要です。そのデータの保存場所が<b>定数</b>と<b>変数</b>です。
+                        定数は一度値が設定されると変更できませんが、変数何回も設定できます。</p>
+                </header>
+
+                <h2 id="type_annotations">タイプアノテーション(Type Annotations)</h2>
+                <p>　定数と変数は、保持するデータの種類を指定する<b>型(タイプ)</b>が必要です。
+                    Swiftにはさまざまなタイプがありますが、ここでは<code>Int</code>だけ紹介します。
+                    <code>Int</code>型の定数と変数は、0、77、100などの整数を格納できます。
+                    可能な値の範囲は限られていますが、詳しい内容は後で説明します。
+                </p>
+
+                <br />
+                <h2 id="declarations">宣言(Declarations)</h2>
+                <p>　定数と変数は、使用する前に宣言する必要があります。 <br />
+                    定数を宣言するには、<code>let</code>キーワードを使います。そして名前を指定し、次に型を指定します。
+                    変数の宣言もほとんど同じです。ただし、キーワードletの代わりにキーワードvarを使います。
+                </p>
+                <pre>
+// heightという名前のInt型の定数を宣言する
+let height: Int    
+
+// legthという名前のInt型の定数を宣言する
+var length: Int</pre>
+
+                <p>複数の定数または複数の変数をコンマで区切って1行で宣言できます。</p>
+                <pre>
+var height: Int, width: Int
+
+// タイプが同じの場合、タイプアノテーションは一番後ろに一回だけでいいです。
+var length, width: Int</pre>
+                
+                <br />  
+                <h2 id="assignment">代入(Assignment)</h2>
+                <p>定数と変数に、<code> = </code>を使って値を与えることができます。</p>
+                <pre>
+// scoreという名前のInt型の定数を宣言して、99を代入する
+let score: Int  
+score = 99 
+
+// numberOfStudentsという名前のInt型の変数を宣言して、20を代入する
+var numberOfStudents: Int
+numberOfStudents = 20</pre>
+                
+                <br />
+                <h2 id="initialization">初期化(Initialization)</h2>
+                <p>　まだ値が割り当てられていない定数と変数は、初期化されていないと言われます。(uninitialized)<br />
+                    もちろん、代入を使って、定数や変数に初期値を与えることができます。 <br />
+                    しかし、もっと簡単な方法があります。定数や変数の初期値を宣言時に代入することです。
+                </p>
+                <pre>
+// scoreという名前のInt型の定数を宣言して、99を代入する
+let score: Int = 99 
+
+// numberOfStudentsという名前のInt型の変数を宣言して、20を代入する
+var numberOfStudents: Int = 20</pre>
+
+                <br />
+                <h2>定数と変数の出力</h2>
+                <pre>
+let score: Int = 99 
+print(score)
+
+var numberOfStudents: Int = 20
+print(numberOfStudents)
+
+<hr />(実行結果)
+99
+20</pre>
+                <br />
+                <br />
+                ++ 下の内容は、今はわからなくてもいいと思います。気軽に読むだけでいいです。
+                <hr />
+                <hr />
+                <br />
+                <h2 id="identifiers">識別子(Identifiers)</h2>
+                <p>
+                    プログラムを作成するとき、変数、関数、マクロなどの名前を選択する必要があります。 これらの名前は<b>識別子</b>と呼びます。<br />
+                    識別子は、文字、数字、アンダースコアを含めることができますが、文字またはアンダースコアで始まる必要があります。<br />
+                    識別子の大文字と小文字を区別します。(case-sensitive) <br />
+                    多くの人はアンダースコアを避け、代わりに大文字を使用して識別子内の各単語を開始します。(Camel Case)
+                </p>
+
+                <br />
+                <h2 id="keywords">キーワード(Keywords)</h2>
+                <p>
+                    <code>let</code>、<code>var</code>などのキーワードは特別な意味を持ってい、識別子として使用できません。
+                </p>
+                
+                <br />
+            
+                
+            </article>
+        </main>
+    </div>
+</body>
+</html>
