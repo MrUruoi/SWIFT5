@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types</title>
+</head>
+<link href="css/main.css" rel="stylesheet">
+<body>
+    <div class="container">
+        <nav>
+            <!-- <header>header...</header> -->
+            <h2>SWIFT 5</h2>
+            <h3>型(Types)</h3>
+            <br />
+            <div id="navigation_div">
+                <hr />
+                <ul>
+                    <li><a href="#integers">整数(Integers)</a></li>
+                    <li><a href="#floating_point_numbers">動小数点数<br />(Floating-Point Numbers)</a></li>
+                    <li><a href="#strings">文字列(String)</a></li>
+                    <li><a href="#booleans">論理型(Booleans)</a></li>
+                    <li><a href="#type_inference">型推論(Type Inference)</a></li>
+                    <li><a href="#Int">Int</a></li>
+                    <li><a href="#UInt">UInt</a></li>
+                    <li><a href="#Float">Float And Double</a></li>
+                </ul>
+                <hr />
+            </div>
+        </nav>
+        <main>
+            <article>
+                <header>
+                    <h1 id="constants_and_variables">型(Types)</h1>
+                    <p>　定数と変数は、保持するデータの種類を指定する<b>型(タイプ)</b>が必要です。<br />
+                    Swiftにはさまざまなタイプがありますが、<br />
+                    ここでは<code>Int</code>、<code>Double</code>、<code>String</code>、<code>Bool</code>について説明します。</p>
+                </header>
+
+                <h2 id="integers">整数(Integers)</h2>
+                <p>　整数は、0、77、-2などの整数を格納できます。
+                    整数型には、<code>Int8, Int32, Int64, UInt32</code>などのタイプがありますが、
+                    今は<code>Int</code>だけ覚えましょう。
+                </p>
+                <pre>
+let　sum: Int = 5  
+print(sum)</pre>
+                    
+                <br />
+                <h2 id="floating_point_numbers">浮動小数点数(Floating-Point Numbers)</h2>
+                <p>　浮動小数点数は、3.14, 0.2など、小数部を含む数値です。
+                    浮動小数点数型には、<code>Float</code>と<code>Double</code>があります。
+                    今は<code>Double</code>だけ覚えましょう。
+                </p>
+                <pre>
+let pi: Double = 3.14
+print(pi)</pre>
+     
+                <br />  
+                <h2 id="strings">文字列(String)</h2>
+                <p>文字列は、「hello、world」や「swift」など一連の文字です。 
+                    文字列型には、<code>String</code>があります。<br />
+                    文字列はダブルクォーテーションで囲みます。
+                </p>
+                <pre>
+let greeting: String = "Hello!"
+print(greeting)</pre>
+
+                <br />  
+                <h2 id="booleans">論理型(Booleans)</h2>
+                <p>論理型の<code>Bool</code>にはtrueまたはfalseだけが格納できます。
+                </p>
+                <pre>
+let isRed: Bool = true
+print(isRed)</pre>
+                
+                <br />
+                <h2 id="type_inference">型推論(Type Inference)</h2>
+                <p>　定数や変数に値を代入する時、タイプアノテーション省略することができます。<br />
+                    Swiftがどんなタイプかを推論します。
+                </p>
+                <pre>
+// 5を代入したため、SwiftはIntタイプだとわかります。
+let　sum = 5 
+
+// 3.14を代入したため、SwiftはDoubleタイプだとわかります。
+let pi = 3.14
+
+// "Hello!"を代入したため、SwiftはStringタイプだとわかります。
+let greeting = "Hello!"</pre>
+
+                <br />
+                <br />
+                ++ 下の内容は、今はわからなくてもいいと思います。気軽に読むだけでいいです。
+                <hr />
+                <hr />
+                <br />
+                <h2 id="Int">Int</h2>
+                <p>
+                    <code>Int</code>のサイズは、プラットフォームによって異なります。（platform’s native word size）<br />
+                    32ビットプラットフォームでは、IntはInt32と同じサイズです。<br />
+                    64ビットプラットフォームでは、IntはInt64と同じサイズです。
+                </p>
+
+                <br />
+                <h2 id="UInt">UInt</h2>
+                <p>
+                    <code>UInt</code>には、負の数を格納できません。UはUnsignedを意味する。<br />
+                    32ビットプラットフォームでは、UIntはUInt32と同じサイズです。<br />
+                    64ビットプラットフォームでは、UIntはUInt64と同じサイズです。
+                </p>
+                
+                <br />
+                <h2 id="Float">Float And Double</h2>
+                <p>
+                    <code>Float</code>は32ビットの浮動小数点数を表します。<br />
+                    <code>Double</code>は64ビットの浮動小数点数を表します。
+                </p>
+            
+                
+            </article>
+        </main>
+    </div>
+</body>
+</html>
