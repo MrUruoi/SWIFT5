@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Flow</title>
+</head>
+<link href="css/main.css" rel="stylesheet">
+<body>
+    <div class="container">
+        <nav>
+            <!-- <header>header...</header> -->
+            <h2>SWIFT 5</h2>
+            <h3>制御フロー(Control Flow)</h3>
+            <br />
+            <div id="navigation_div">
+                <hr />
+                <ul>
+                    <li><a href="#comparison_operators">比較演算子</a></li>
+                    <li><a href="#logical_operators">論理演算子</a></li>
+                    <li><a href="#if_statement">if文</a></li>
+                    <li><a href="#switch_statement">switch文</a></li>
+                    <li><a href="#range_operators">範囲演算子</a></li>
+                    <li><a href="#for-in_loops">for-in ループ</a></li>
+                    <li><a href="#while_loops">while ループ</a></li>
+                    <li><a href="#repeat-while">repeat-while ループ</a></li>
+                    <li><a href="#continue">continue文</a></li>
+                    <li><a href="#break">break文</a></li>
+                </ul>
+                <hr />
+            </div>
+        </nav>
+        <main>
+            <article>
+                <header>
+                    <h1 id="">制御フロー(Control Flow)</h1>
+                    <p>　Swiftは、さまざまな制御フローステートメントを提供します。<br />
+                        Selection, Iteration(Looping), jumpなどの機能をを行います。
+                    </p>
+                </header>
+
+
+                <h2 id="comparison_operators">比較演算子(Comparison Operators)</h2>
+                <p>Swiftの文(Statements)は、式の値をテストしてそれがtureかfalseかを確認する場合があります。<br />
+                    比較演算子は、trueかfalseかを示す論理型(Booleans)を返します。
+                </p>
+                <table border="solid" style="border-collapse:collapse">
+                    <tr><td>&nbsp;==&nbsp;</td><td>等しい(equal to)</td></tr>
+                    <tr><td>&nbsp;!=&nbsp;</td><td>等しくない(not equal to)</td></tr>
+                    <tr><td>&nbsp;&gt;&nbsp;</td><td>より大きい(greather than)</td></tr>
+                    <tr><td>&nbsp;&lt;&nbsp;</td><td>より小さい(less than)</td></tr>
+                    <tr><td>&nbsp;&gt;=&nbsp;</td><td>より大きい、または等しい(greater than or equal to)</td></tr>
+                    <tr><td>&nbsp;&lt;=&nbsp;</td><td>より小さい、または等しい(less than or equal to)</td></tr>
+                </table>
+                <pre>
+1 == 1       // true
+2 != 1       // true
+2 &gt; 1        // true
+1 &lt; 2        // true
+1 &gt;= 1       // true
+2 &lt;= 1       // false</pre>
+
+                <br />
+                <h2 id="logical_operators">論理演算子(Logical Operators)</h2>
+                <p>論理演算子は、論理型(Booleans)を変更または組み合わせます。</p>
+                <table border="solid" style="border-collapse:collapse">
+                    <tr><td>&nbsp;!&nbsp;</td><td>論理 NOT(Logical NOT)</td></tr>
+                    <tr><td>&nbsp;&&&nbsp;</td><td>論理 AND(Logical AND)</td></tr>
+                    <tr><td>&nbsp;||&nbsp;</td><td>論理 OR(Logical OR)</td></tr>
+                </table>
+                <pre>
+let a = true
+!a              // false
+let b = true
+let c = false
+b && c          // false
+let d = true
+let e = false
+d || e          // true</pre>
+
+
+            <br />
+            <h2 id="if_statement">if文(The if Statement)</h2>
+            <p>if文は、ある値をテストしてtrueの場合、コードを実行します。</p>
+            <pre>
+let a = 1
+if a == 1 {
+    print("aの値は1")       // 実行される
+}</pre>
+
+            <br />
+            <p>if文は、「else」句を含めることができます。<br />
+            ifの後ろがfalseの場合、「else」句の後ろのコードを実行します。
+            </p>
+            <pre>
+let b = 2
+if b > 3 {
+    print("bの値は3より大きい")        // 実行されない
+} else {
+    print("bの値は3より大きくない")     // 実行される
+}</pre>
+
+            <br />
+            <p>一連の条件をテストする必要がある場合、「else if」句を使いましょう。</p>
+            <pre>
+let c = 3
+if c == 1 {
+    print("cの値は1")       // 実行されない
+} else if c == 2 {
+    print("cの値は2")       // 実行されない
+} else if c == 3 {
+    print("cの値は3")       // 実行
+} else {
+    print("??????")        // 実行されない
+}
+            </pre>
+
+            <br />
+            <h2 id="switch_statement">switch文(The switch Statement)</h2>
+            <p>switch文は、いくつかのケースの中で値と一致するケースを選択します。<br />
+                値がどの選択肢とも一致しない場合、「default」のケースが適用されます。</p>
+            <pre>
+let grade = 2
+
+switch grade {
+case 5:
+    print("Exellent")
+case 4:
+    print("Good")
+case 3:
+    print("Average")
+case 2:
+    print("Poor")       // 実行
+default:
+    print("Failing")
+}</pre>
+            
+            <br />
+            <p>カンマを入れて、ケースに複数の記述することも可能</p>
+            <pre>
+let grade = 3
+
+switch grade {
+case 5, 4, 3:
+    print("Passing")            // 実行
+case 2, 1:
+    print("Failing")
+default:
+    print("Illegal grade")
+}</pre>
+            
+            <br />
+            <h2 id="range_operators">範囲演算子(Range Operators)</h2>
+            <p>Swiftには、値の範囲を表す演算子があります。</p>
+            <pre>
+1...5       // 1 ~ 5を表す
+1..&lt6       // 1 ~ 5を表す
+3...        // 3 ~(から)を表す
+...3        // ~ 3(まで)を表す
+            </pre>
+
+            <br />
+            <h2 id="for-in_loops">for-inループ(For-In Loops)</h2>
+            <p>for–in ループは、繰り返し処理の一つです。</p>
+            <pre>
+for index in 1...3 {
+    print(index)
+}
+
+<hr />(実行結果)
+1
+2
+3</pre>
+            <p><code>in</code>の後ろは、繰り返し範囲を表します。(<code>1...3</code>なので1から3まで)<br />
+                <code>for</code>と<code>in</code>の間に、名前を指定します。(<code>index</code>)<br />
+                このfor-in ループが実行されると、<code>index</code>が範囲の最初の値(1)に初期化されます。そしてindexの値がプリントされます。<br />
+                次に、<code>index</code>が範囲から次の値(2)に初期化されます。そしてindexの値がプリントされます。<br />
+                最後に、<code>index</code>が範囲から次の値(3)に初期化されます。そしてindexの値がプリントされます。<br />
+            </p>
+
+            <br />
+            <p>次は、九九３の段の例です。</p>
+            <pre>
+let x = 3
+for number in 1...9 {
+    print(x * number)
+}</pre>
+
+            <br />
+            <p>単純に繰り返すだけなら、<code>for</code>と<code>in</code>の間に、アンダースコアを入れます。</p>
+            <pre>
+for _ in 1...3 {
+    print("Hello, World!")      
+}
+
+<hr />(実行結果)
+Hello, World!
+Hello, World!
+Hello, World!</pre>
+
+
+            <br />
+            <h2 id="while_loops">whileループ(while Loops)</h2>
+            <p>whileループは、条件がfalseになるまで一連のコードを実行します。</p>
+            <pre>
+var i = 0
+while i &lt 3 {
+    print("Hello, World!")
+    i += 1
+}</pre>
+
+            <p><code>while</code>の後ろに、条件を書きます。<br />
+                最初の条件(<code> 0 &lt 3 </code>)はtrueなので <code>{</code>から<code>}</code>までのコードが実行されます。<br />
+                次に、変数<code>i</code>の値は1になりました。条件(<code> 1 &lt 3 </code>)はtrueなのでコードがまた実行されます。<br />
+                次に、変数<code>i</code>の値は2になりました。条件(<code> 2 &lt 3 </code>)はtrueなのでコードがまた実行されます。<br />
+                最後に、変数<code>i</code>の値は3になりました。条件(<code> 3 &lt 3 </code>)はコードがまた実行されません。<br />
+            </p>
+
+            <br />
+            <h2 id="repeat-while">repeat-whileループ(repeat-while Loops)</h2>
+            <p>repeat-whileループは、一連のコードを実行した後、条件がfalseになるまで繰り返します。</p>
+            <pre>
+var i = 0
+repeat{ 
+    print("Hello, World!")
+    i += 1  
+} while i &lt 3
+
+<hr />(実行結果)
+Hello, World!
+Hello, World!
+Hello, World!</pre>
+
+
+            <br />
+            <h2 id="continue">continue文(The continue Statement)</h2>
+            <p>continue文は、現在のループ停止し次のループ開始させます。</p>
+                        
+            <pre>
+for number in 0...3 {
+    if number == 2 {
+        continue
+    }
+    print(number)
+    // ここにジャンプ
+}
+
+<hr />(実行結果)
+0
+1
+3</pre>
+            <p><code>number</code>が2の場合、continue文が実行する条件を入れました。<br />
+                <code>continue</code>により、2はプリントされません。
+            </p>
+
+            <br />
+            <h2 id="break">break文(The break Statement)</h2>
+            <p>break文は、制御フローの全体の実行を終了させます。</p>
+            <pre>
+for number in 0...3 {
+    if number == 2 {
+        break
+    }
+    print(number)
+}
+
+<hr />(実行結果)
+0
+1</pre>
+
+            <br />
+            <br />
+            ++ 下の内容は、今はわからなくてもいいと思います。気軽に読むだけでいいです。
+            <hr />
+            <hr />
+
+
+
+                
+            </article>
+        </main>
+    </div>
+</body>
+</html>
