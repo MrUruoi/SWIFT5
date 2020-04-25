@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String and Characters</title>
+</head>
+<link href="css/main.css" rel="stylesheet">
+<body>
+    <div class="container">
+        <nav>
+            <!-- <header>header...</header> -->
+            <h2>SWIFT 5</h2>
+            <h3>文字列と文字(String and Characters)</h3>
+            <br />
+            <div id="navigation_div">
+                <hr />
+                <ul>
+                    <li><a href="#initializing_an_string">文字列の初期化</a></li>
+                    <li><a href="#concatenating_strings">文字列の結合</a></li>
+                    <li><a href="#string_interpolation">文字列補間</a></li>
+                    <li><a href="#string_and_for">文字列とfor-in ループ</a></li>
+                    <li><a href="#counting_characters">文字列のカウント</a></li>
+                    <li><a href="#comparing_strings">文字列の比較</a></li>
+                    <li><a href="#unicode">Unicode</a></li>                   
+                </ul>
+                <hr />
+            </div>
+        </nav>
+        <main>
+            <article>
+                <header>
+                    <h1 id="">文字列と文字(String and Characters)</h1>
+                    <p><code>Character</code>タイプには、「a」、「あ」など一つの文字を格納できます。<br />
+                        <code>String</code>タイプには、「Hello」、「はい」など一連の文字を格納できます。<br />
+                        文字と文字列はダブルクォーテーションで囲みますが、<br />
+                        タイプアノテーションがないとデフォルトで<code>String</code>タイプになります。
+                    </p>
+                    <pre>
+let ch: Character = "a"     
+let str: String = "abcd"
+
+let someString = "s"        // Stringタイプ</pre>
+                </header>
+
+
+                <h2 id="initializing_an_string">文字列の初期化(Initializing an String)</h2>
+                <p>文字列の初期化を初期はするには、ダブルクォーテーションで囲まれた文字列(文字列リテラル)を代入するか、<br />
+                    初期化シンタックスを利用します。
+                </p>
+                <pre>
+let str1 = "Hello"
+let str2 = String("Hello")
+</pre>
+
+                <br />
+                <h2 id="concatenating_strings">文字列の結合(Concatenating Strings)</h2>
+                <p>「＋」、「＋＝」を使って文字列を結合することができます。</p>
+                <pre>
+let str1 = "Hello"          
+let str2 = " World!"
+let str3 = str1 + str2      
+print(str3)                 // Hello World!
+
+var str4 = "qwer"
+str4 += "ty"
+print(str4)                 // qwerty</pre>
+
+                <br />
+                <h2 id="string_interpolation">文字列補間(String Interpolation)</h2>
+                <p>文字列補間は、文字列に定数や変数の値を含め新しい文字列を作ることです。</p> 
+                <pre>
+let number = 3
+let msg = "定数numberの値は、\(number)"
+print(msg)                              // 定数numberの値は、3</pre>        
+                
+                <br />
+                <p>定数や変数を被演算子として使うこともできます。</p>
+                <pre>
+let a = 1
+let b = 2
+
+let c = a + b
+print(c)            // 3</pre>
+            
+                <br />
+                <h2 id="string_and_for-in">文字列とfor-in ループ</h2>
+                <p><code>String</code>をfor–in ループで繰り返して、個々の<code>Character</code>にアクセスすることができます。</p>
+<pre>
+let str = "abcd"
+for ch in str {
+    print(ch)
+}
+
+<hr />(実行結果)
+a
+b
+c
+d</pre>
+
+                <br />  
+                <h2 id="counting_characters">文字列のカウント</h2>
+                <p>文字列が何文字か、<code>count</code>プロパティを使います。<br />
+                    プロパティについては、後で詳しく説明します。
+                </p>
+                <pre>
+let str = "Hello World!"
+let count = str.count
+print(count)
+
+<hr />(実行結果)
+12</pre>
+
+
+            <br />
+            <h2 id="comparing_strings">文字列の比較(Comparing Strings)</h2>
+                <p>「=」演算子を使って文字列を比較することができます。<br /></p>
+            <pre>
+let str = "Hello World!"
+let anotherStr = "Hello World!"
+
+if str == anotherStr {
+    print("Eqaul")
+} else {
+    print("Not equal")
+}
+
+<hr />(実行結果)
+Eqaul</pre>
+
+
+            <br />
+            <br />
+            ++ 下の内容は、今はわからなくてもいいと思います。気軽に読むだけでいいです。
+            <hr />
+            <hr />
+
+            <br />
+            <h2 id="unicode">Unicode</h2>
+            <p>コンピュータが文字を扱うために、それぞれの文字に割り当てられた番号を文字コードといいます。<br />
+                文字コードの国際業界標準の一つがUnicodeです。<br />
+                Swiftの<code>String</code>と<code>Character</code>は、Unicodeに準拠しています。
+            </p>
+            <pre>
+let someCharacter: Character  = "\u{0041}" 
+print(someCharacter)
+
+let anotherCharacter = "\u{3042}"
+print(anotherCharacter)
+
+<hr />(実行結果)
+A
+あ</pre>
+
+            </article>
+        </main>
+    </div>
+</body>
+</html>
