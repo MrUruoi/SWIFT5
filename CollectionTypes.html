@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Types</title>
+</head>
+<link href="css/main.css" rel="stylesheet">
+<body>
+    <div class="container">
+        <nav>
+            <!-- <header>header...</header> -->
+            <h2>SWIFT 5</h2>
+            <h3>コレクションタイプ</h3>
+            <br />
+            <div id="navigation_div">
+                <hr />
+                <ul>
+                    <li><a href="#creating_array">Arrayの作成</a></li>
+                    <li><a href="#accessing_and_modifying_an_array">Arrayの操作</a></li>
+                    <li><a href="#iterating_over_an_array">Arrayの繰り返し処理</a></li>
+                    <li><a href="creating_set">Setの作成</a></li>
+                    <li><a href="accessing_and_modifying_an_array">Arrayの操作</a></li>
+                    <li><a href="iterating_over_an_array">Arrayの繰り返し処理</a></li>
+                    <li><a href="creating_dictionary">Dictionaryの作成</a></li>
+                    <li><a href="accessing_and_modifying_an_dinctionary">Dinctionaryの操作</a></li>
+                    <li><a href="iterating_over_a_dictionary">Dinctionaryの繰り返し処理</a></li>
+                </ul>
+                <hr />
+            </div>
+        </nav>
+        <main>
+            <article>
+                <header>
+                    <h1 id="">タイプアノテーション(Collection Types)</h1>
+                    <p>Swiftは、値のコレクション(collections of values)を格納するため、<br />
+                        <code>Array</code>、<code>Set</code>、<code>Dictionary</code>を提供します。
+                    </p>
+                </header>
+
+                <h2 id="array">Array</h2>
+                <p><code>Array</code>は、同じタイプの値を順序付きリスト(an ordered list)に格納します。</p>
+                
+                <br />
+                <h2 id="creating_array">Arrayの作成</h2>
+                <pre>
+// Intの格納できるArrayを作成
+var someInts1 = Array&lt;Int&gt;()</pre>
+                <br />
+                <p><code>[タイプ]</code>のように簡略化して書くこともできます。</p>
+                <pre>
+var someInts2 = [Int]()</pre>      
+                <br />
+                <p>リテラルで<code>Array</code>を初期化することもできます。</p>          
+                <pre>
+var someInts3: [Int] = []           // 空のArray
+var someInts4: [Int] = [1, 3, 5]    // 1, 3, 5 を含めるArray
+                </pre>
+                
+                <br />
+                <h2 id="accessing_and_modifying_an_array">Arrayの操作</h2>
+                <p>ブラケット([])を使ってArrayにアクセス<br />
+                Arrayは1ではなく、0から始まることに注意
+                </p>
+                <pre>
+var someList = [2, 3, 5, 7, 3]
+
+let someInt = someList[0]       
+someList[2] = 4
+
+print(someInt)
+print(someList)
+
+<hr />(実行結果)
+2
+[2, 3, 4, 7, 3]</pre>
+
+                <p><code>append</code>で新しい値を追加</p>
+                <pre>
+var someList = [Int]()
+someList.append(7)
+someList.append(2)
+someList.append(2)
+print(someList)
+
+<hr />(実行結果)
+[7, 2, 2]</pre>
+                <p><code>append</code>はメソッド(method)というものですが、いろいろな機能を提供してくれます。<br />
+                メソッドを利用して値の追加、削除、変更などができます。<br />
+                詳しい内容はあとで説明します。
+                </p>
+
+                <br />
+
+                <h2 id="iterating_over_an_array">Arrayの繰り返し処理</h2>
+                <p>Array内の値を、<code>for–in</code> ループで繰り返し処理することができます。</p>
+                <pre>
+var someList = ["qwer", "asdf", "zxcv"]
+for item in someList {
+    print(item)
+}
+           
+<hr />(実行結果)
+qwer
+asdf
+zxcv</pre>
+
+                <br />
+                <h2 id="set">Set</h2>
+                <p><code>Set</code>は、同じタイプの値を順序付きのないコレクションに格納します。<br />
+                    Arrayとは異なり、Setは重複する値を格納することはできません。
+                </p>
+                
+                <br />
+                <h2 id="creating_set">Setの作成</h2>
+                <pre>
+// Intの格納できるSetを作成
+var someInts1 = Set&lt;Int&gt;()</pre>
+                
+                <br />
+                <p>リテラルで<code>Set</code>を初期化することもできます。</p>  
+                <pre>
+var someInts2: Set&lt;Int&gt; = []            // 空きのSet
+var someInts3: Set&lt;Int&gt; = [2, 5, 7]     // 2, 5, 7を含めるSet</pre>
+
+<br />
+                <h2 id="accessing_and_modifying_an_set">Setの操作</h2>
+                <p><code>insert</code>で新しい値を追加</p>
+                <pre>
+var someAnimals: Set<String> = []
+someAnimals.insert("cat")
+someAnimals.insert("dog")
+print(someAnimals)
+
+<hr />(実行結果)
+["cat", "dog"]</pre>
+                <p><code>append</code>はメソッド(method)というものですが、いろいろな機能を提供してくれます。<br />
+                メソッドを利用して値の追加、削除、変更などができます。<br />
+                詳しい内容はあとで説明します。
+                </p>
+
+                <br />
+
+                <h2 id="iterating_over_an_array">Arrayの繰り返し処理</h2>
+                <p>Array内の値を、<code>for–in</code> ループで繰り返し処理することができます。</p>
+                <pre>
+var someList = ["qwer", "asdf", "zxcv"]
+for item in someList {
+    print(item)
+}
+           
+<hr />(実行結果)
+qwer
+asdf
+zxcv</pre>          
+            
+                <br />
+                <h2 id="iterating_over_a_set">Setの繰り返し処理</h2>
+                <p>Set内の値を、<code>for–in</code> ループで繰り返し処理することができます。</p>
+                <pre>
+var someNumbers: Set<Int> = [2, 5, 7]
+for item in someNumbers {
+    print(item)
+}
+            
+<hr />(実行結果)
+5
+2
+7</pre>
+                <p>Setは、順序がないため結果が異なることがあります。</p>
+
+                <br />
+                <h2 id="dictionary">Dictionary</h2>
+                <p><code>Dictionary</code>は、<code>key</code>と<code>value</code>のペアを順序のないコレクションに格納します。<br>
+                各<code>value</code>は一意の<code>key</code>に関連付けられていて、その<code>value</code>の識別子として機能します。
+                </p>
+
+                <br />
+                <h2 id="creating_dictionary">Dictionaryの作成</h2>
+                <pre>
+// Int型のkeyとString型のvalueを持つDinctionaryを作成
+var someDinctionary = [Int: String]()</pre>
+                
+                <p>リテラルで<code>Dinctionary</code>を初期化することもできます。</p> 
+                <pre>
+var namesOfIntegers = [
+    1 : "one",
+    2 : "two",
+    3 : "three"
+]</pre> 
+
+                <br />
+                <h2 id="accessing_and_modifying_an_dinctionary">Dinctionaryの操作</h2>
+                <p>ブラケット([])を使ってArrayにアクセス</p>
+                <pre>
+var namesOfIntegers = [
+    1 : "one",
+    2 : "two",
+    3 : "three"
+]
+let nameOf2 = namesOfIntegers[2];
+print(nameOf2)
+
+<hr />(実行結果)
+Optional("two")</pre>
+                <p>Dinctionaryにアクセスしたら、「Optional」という結果になります。<br />
+                    Optionalについてはあとで説明します。
+                </p>
+
+                <br />
+                <h2 id="iterating_over_a_dictionary">Dinctionaryの繰り返し処理</h2>
+                <p><code>for–in</code> ループで繰り返し処理することができます。</p>
+                <pre>
+var namesOfIntegers = [
+    1 : "one",
+    2 : "two",
+    3 : "three"
+]
+
+for name in namesOfIntegers {
+    print(name)
+}
+<hr />(実行結果)
+(key: 1, value: "one")
+(key: 2, value: "two")
+(key: 3, value: "three")
+</pre>
+
+            
+                
+            </article>
+        </main>
+    </div>
+</body>
+</html>
